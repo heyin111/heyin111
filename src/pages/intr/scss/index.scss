@@ -1,0 +1,225 @@
+.intr-page {
+  background: $bg2;
+  @include flex_layout(column, flex-start, flex-start);
+
+  .page-content {
+    width: 100%;
+    flex: 1;
+    @include flex_layout(row, flex-start, flex-start);
+
+    .left-nav {
+      width: 200px;
+      height: 100%;
+
+      .nav-item {
+        width: 100%;
+        .nav-txt {
+          display: inline-block;
+          vertical-align: top;
+          width: 100%;
+          padding-left: 40px;
+          line-height: 48px;
+          border-left: 2px solid $bc0;
+          font-size: $fzn;
+          color: $cor5;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: $cor6;
+            border-left-color: $bc2;
+            background-color: $bg3;
+          }
+
+          &.active {
+            color: $cor6;
+            border-left-color: $bc1;
+            background-color: $bg3;
+          }
+        }
+      }
+    }
+
+    .right-content {
+      flex: 1;
+      height: 100%;
+      background-color: $bg3;
+      @include position();
+
+      .content-layout {
+        width: 100%;
+        height: 100%;
+        @include position(absolute, left, top, 0, 0, 1);
+        overflow-y: scroll;
+
+        .content-warp {
+          padding: 30px;
+
+          .mode-list {
+            width: 100%;
+            height: 288px;
+            margin-bottom: 30px;
+            overflow: hidden;
+
+            .mode-item {
+              float: left;
+              width: 25%;
+              height: 100%;
+              overflow: hidden;
+              cursor: pointer;
+              @include position();
+
+              @each $img in transfer, discern, translate, compound {
+                &.#{$img} {
+                  background: url("#{$imagePath}/#{$img}.png")
+                    center
+                    center
+                    no-repeat;
+                  background-size: cover;
+                }
+              }
+
+              &:hover,
+              &.active {
+                .item-content {
+                  top: -100%;
+                }
+              }
+
+              .item-content {
+                width: 100%;
+                height: 200%;
+                transition: top 0.5s ease-in-out;
+                @include position(absolute, left, top, 0, 0, 100);
+
+                .item-part-top {
+                  width: 100%;
+                  height: 50%;
+                  @include flex_layout(column, center, center);
+
+                  @each $icon in transfer, discern, translate, compound {
+                    .#{$icon} {
+                      width: 52px;
+                      height: 58px;
+                      margin-bottom: 30px;
+                      background: url("#{$iconPath}/#{$icon}.png")
+                        center
+                        center
+                        no-repeat;
+                    }
+                  }
+
+                  .cc-line {
+                    display: block;
+                    width: 28px;
+                    height: 2px;
+                    background-color: $bg5;
+                    margin-bottom: 15px;
+                  }
+
+                  .name-txt {
+                    width: 50%;
+                    font-size: $fzbl;
+                    color: $cor6;
+                    text-align: center;
+                  }
+                }
+
+                .item-part-bottom {
+                  width: 100%;
+                  height: 50%;
+                  background-color: $bg4;
+                  @include flex_layout(column, center, center);
+
+                  @each $icon in transfer, discern, translate, compound {
+                    .#{$icon} {
+                      width: 52px;
+                      height: 58px;
+                      margin-bottom: 15px;
+                      background: url("#{$iconPath}/#{$icon}_hover.png")
+                        center
+                        center
+                        no-repeat;
+                    }
+                  }
+
+                  .name-txt {
+                    width: 50%;
+                    line-height: 30px;
+                    font-size: $fzbl;
+                    color: $cor0;
+                    margin-bottom: 20px;
+                    text-align: center;
+                  }
+
+                  .intr-txt {
+                    width: 80%;
+                    height: 132px;
+                    line-height: 22px;
+                    overflow: hidden;
+                    color: $cor0;
+                    font-size: $fzn;
+                  }
+                }
+              }
+            }
+          }
+
+          .features-content {
+            margin-bottom: 30px;
+            &.features-0 {
+              background: url("#{$imagePath}/apple_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.features-1 {
+              background: url("#{$imagePath}/woman_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.features-2 {
+              background: url("#{$imagePath}/apple_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.features-3 {
+              background: url("#{$imagePath}/voice_1_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+          }
+
+          .scene-area {
+            padding: 60px 0;
+            &.scene-0 {
+              background: url("#{$imagePath}/voice_2_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.scene-1 {
+              background: url("#{$imagePath}/apple_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.scene-2 {
+              background: url("#{$imagePath}/woman_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+            &.scene-3 {
+              background: url("#{$imagePath}/voice_3_bottom.png") center center
+                no-repeat;
+              background-size: cover;
+            }
+
+            .txt {
+              margin-bottom: 15px;
+              color: $cor0;
+              font-size: $fzmh;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

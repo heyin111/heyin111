@@ -1,0 +1,10 @@
+.permission {
+    height: 100%;
+    @include flex_layout(row, center, center);
+
+    .delete-txt {
+        text-align: center;
+        font-size: $fzsl;
+        color: $cor1;
+    }
+}

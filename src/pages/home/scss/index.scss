@@ -1,0 +1,119 @@
+.home-page {
+  background: $bg0;
+  @include flex_layout(column, flex-start, flex-start);
+
+  .home-content {
+    width: 100%;
+    flex: 1;
+    padding: 0 35px;
+    @include flex_layout(column, flex-start, flex-start);
+
+    .top-content {
+      width: 100%;
+      height: 75%;
+      overflow: hidden;
+      @include position();
+
+      .part-content {
+        width: 300%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+        @include position(absolute, left, top, 0, 0);
+        @include flex_layout(row, flex-start, flex-start);
+
+        .item-part {
+          height: 100%;
+          flex: 1;
+          @include flex_layout(row, space-between, center);
+
+          .left-fn-title {
+            width: 600px;
+            padding-left: 50px;
+
+            .fn-title {
+              color: $cor0;
+              font-size: $fz36;
+              margin-bottom: 18px;
+            }
+
+            .intr-txt {
+              color: $cor4;
+              font-size: $fzml;
+            }
+          }
+
+          .right-img-parent {
+            width: 40%;
+
+            .fn-img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-content {
+      width: 100%;
+      height: 25%;
+      @include flex_layout(row, space-around, flex-start);
+
+      .bottom-item {
+        width: 32%;
+        height: 100%;
+        color: $cor3;
+        cursor: pointer;
+        border-top: 4px solid #383d45;
+        @include flex_layout(row, center, center);
+        transition: all 0.3s ease-in-out;
+        &:nth-child(2) {
+          margin: 0 2%;
+        }
+
+        .b-cc {
+          @include flex_layout(column, flex-start, center);
+
+          .small-title {
+            font-size: $fzsl;
+            margin-top: 20px;
+          }
+        }
+
+        @each $icon in ai, manage, grid {
+          .#{$icon} {
+            width: 34px;
+            height: 34px;
+            background: url("#{$iconPath}/#{$icon}.png")
+              center
+              center
+              no-repeat;
+          }
+
+          &:hover,
+          &.active {
+            color: $hc_0;
+            border-top: 4px solid #1ea9fc;
+            background: -webkit-gradient(
+              linear,
+              left top,
+              left bottom,
+              from(rgba(30, 169, 252, 0.2)),
+              to(#000000)
+            );
+            background: linear-gradient(
+              to bottom,
+              rgba(30, 169, 252, 0.2),
+              #000000
+            );
+            .#{$icon} {
+              background: url("#{$iconPath}/#{$icon}_hover.png")
+                center
+                center
+                no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.product-users {
+
+
+
+    .user-list {
+        width: 100%;
+        @include position();
+    }
+
+    .modal-footer {
+        text-align: center;
+    }
+}

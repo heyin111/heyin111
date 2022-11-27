@@ -1,0 +1,45 @@
+.login-page {
+    background-color: $bg0;
+    font-family: SourceHanSerifCN;
+    @include flex_layout(column, flex-start, flex-start);
+
+    .cc-content {
+        width: 100%;
+        flex: 1;
+        background: url("#{$imagePath}/login_page_bg.png") center center no-repeat;
+        background-size: cover;
+        @include flex_layout(row, center, center);
+
+        .left-content {
+            margin-right: 40px;
+            .ai-img {
+                margin-bottom: 45px;
+            }
+            @include flex_layout(column, flex-start, center);
+        }
+
+        .right-content {
+            width: 360px;
+            height: 360px;
+            background-color: $bg1;
+            @include flex_layout(row, center, center);
+
+            .lg-center {
+
+                .title {
+                    font-size: $fzbh;
+                    color: $cor1;
+                    margin-bottom: 22px;
+                }
+
+                .el-form {
+                    width: 300px;
+                }
+
+                .el-button {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
