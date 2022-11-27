@@ -1,35 +1,24 @@
-# vue-admin
+# heyin112
 
-#### Description
-vue-admin
+## Project setup
+```
+npm install
+```
 
-#### Software Architecture
-Software architecture description
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-#### Installation
+### Compiles and minifies for production
+```
+npm run build
+```
 
-1. yarn install / cnpm/npm install
-2. vue vuex vue-router vue.config.js ajax mock
+### Lints and fixes files
+```
+npm run lint
+```
 
-#### Instructions
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### Contribution
-
-1. Fork the repository
-2. Create Feat_xxx branch
-3. Commit your code
-4. Create Pull Request
-
-
-#### Gitee Feature
-
-1. You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2. Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3. Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4. The most valuable open source project [GVP](https://gitee.com/gvp)
-5. The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6. The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
